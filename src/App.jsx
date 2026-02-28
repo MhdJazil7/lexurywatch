@@ -124,7 +124,7 @@ function App() {
 
   return (
     <CartProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <ScrollToTop />
         <ScrollReveal />
 

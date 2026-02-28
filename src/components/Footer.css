@@ -126,18 +126,22 @@
 }
 
 @media (max-width: 768px) {
+    .footer {
+        padding: 3rem 1.5rem 1.5rem;
+    }
+
     .footer-container {
-        grid-template-columns: 1fr;
         gap: 3rem;
     }
 
     .footer-links {
-        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
     }
 }
 
 @media (max-width: 480px) {
     .footer-links {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        gap: 2.5rem;
     }
 }

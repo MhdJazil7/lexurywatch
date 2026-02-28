@@ -4,10 +4,12 @@ import { useEffect, useRef, useState, useCallback } from 'react';
 import WatchCard from '../components/WatchCard';
 import './Home.css';
 
+const base = import.meta.env.BASE_URL;
+
 const FEATURED_WATCHES = [
-    { id: 1, brand: 'Rolex', name: 'Cosmograph Daytona', price: '₹29,50,000', isNew: true, image: '/watches/rolex.png' },
-    { id: 2, brand: 'Patek Philippe', name: 'Nautilus 5711/1A', price: '₹95,00,000', isNew: false, image: '/watches/patek.png' },
-    { id: 3, brand: 'Audemars Piguet', name: 'Royal Oak 15500ST', price: '₹37,50,000', isNew: true, image: '/watches/ap.png' },
+    { id: 1, brand: 'Rolex', name: 'Cosmograph Daytona', price: '₹29,50,000', isNew: true, image: `${base}watches/rolex.png` },
+    { id: 2, brand: 'Patek Philippe', name: 'Nautilus 5711/1A', price: '₹95,00,000', isNew: false, image: `${base}watches/patek.png` },
+    { id: 3, brand: 'Audemars Piguet', name: 'Royal Oak 15500ST', price: '₹37,50,000', isNew: true, image: `${base}watches/ap.png` },
 ];
 
 

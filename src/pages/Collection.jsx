@@ -3,13 +3,15 @@ import { Search, Filter, SlidersHorizontal, ChevronDown } from 'lucide-react';
 import WatchCard from '../components/WatchCard';
 import './Collection.css';
 
+const base = import.meta.env.BASE_URL;
+
 const MOCK_WATCHES = [
-    { id: 1, brand: 'Rolex', name: 'Cosmograph Daytona', price: '₹29,50,000', isNew: true, image: '/watches/rolex.png' },
-    { id: 2, brand: 'Patek Philippe', name: 'Nautilus 5711/1A', price: '₹95,00,000', isNew: false, image: '/watches/patek.png' },
-    { id: 3, brand: 'Audemars Piguet', name: 'Royal Oak 15500ST', price: '₹37,50,000', isNew: true, image: '/watches/ap.png' },
-    { id: 4, brand: 'Richard Mille', name: 'RM 11-03 McLaren', price: '₹2,90,00,000', isNew: false, image: '/watches/rm.png' },
-    { id: 5, brand: 'Rolex', name: 'Submariner Date', price: '₹12,00,000', isNew: false, image: '/watches/submariner.png' },
-    { id: 6, brand: 'Vacheron Constantin', name: 'Overseas 4500V', price: '₹26,50,000', isNew: false, image: '/watches/vc.png' },
+    { id: 1, brand: 'Rolex', name: 'Cosmograph Daytona', price: '₹29,50,000', isNew: true, image: `${base}watches/rolex.png` },
+    { id: 2, brand: 'Patek Philippe', name: 'Nautilus 5711/1A', price: '₹95,00,000', isNew: false, image: `${base}watches/patek.png` },
+    { id: 3, brand: 'Audemars Piguet', name: 'Royal Oak 15500ST', price: '₹37,50,000', isNew: true, image: `${base}watches/ap.png` },
+    { id: 4, brand: 'Richard Mille', name: 'RM 11-03 McLaren', price: '₹2,90,00,000', isNew: false, image: `${base}watches/rm.png` },
+    { id: 5, brand: 'Rolex', name: 'Submariner Date', price: '₹12,00,000', isNew: false, image: `${base}watches/submariner.png` },
+    { id: 6, brand: 'Vacheron Constantin', name: 'Overseas 4500V', price: '₹26,50,000', isNew: false, image: `${base}watches/vc.png` },
     { id: 7, brand: 'Omega', name: 'Speedmaster Moonwatch', price: '₹5,80,000', isNew: true, image: 'https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg?auto=compress&cs=tinysrgb&w=800' },
     { id: 8, brand: 'A. Lange & Söhne', name: 'Lange 1', price: '₹39,80,000', isNew: false, image: 'https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&q=80&w=800' },
 ];
