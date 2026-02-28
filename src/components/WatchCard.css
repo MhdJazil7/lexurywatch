@@ -1,0 +1,159 @@
+.watch-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.15s ease, box-shadow 0.3s ease;
+    will-change: transform;
+}
+
+/* Shimmer / specular highlight that follows cursor via --mx / --my */
+.card-shimmer {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%),
+            rgba(255, 255, 255, 0.07) 0%,
+            transparent 55%);
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.watch-card:hover .card-shimmer {
+    opacity: 1;
+}
+
+.watch-image-container {
+    position: relative;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    aspect-ratio: 1;
+    background: var(--bg-tertiary);
+    margin-bottom: 1.5rem;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.watch-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 1rem;
+    transition: transform 0.5s cubic-bezier(.25, .8, .25, 1);
+}
+
+.watch-card:hover .watch-img {
+    transform: scale(1.15);
+}
+
+.mock-watch {
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+    background: radial-gradient(circle, #333, #111);
+    box-shadow:
+        inset 0 0 20px rgba(255, 255, 255, 0.1),
+        0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+/* Add a little shiny effect to the mock watch */
+.mock-watch::after {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 30%;
+    height: 30%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    filter: blur(5px);
+}
+
+.badge-new {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: var(--accent-gold);
+    color: #000;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.3rem 0.8rem;
+    border-radius: var(--radius-full);
+    z-index: 10;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.btn-wishlist {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(10, 10, 10, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all var(--transition-fast);
+}
+
+.btn-wishlist:hover {
+    background: rgba(255, 0, 0, 0.2);
+    color: #ff4757;
+    border-color: rgba(255, 0, 0, 0.3);
+}
+
+.watch-details {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.watch-brand {
+    font-size: 0.8rem;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+}
+
+.watch-name {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.watch-price {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    margin-top: auto;
+}
+
+.btn-full-width {
+    width: 100%;
+}

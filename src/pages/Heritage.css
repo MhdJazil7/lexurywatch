@@ -1,0 +1,180 @@
+.heritage-page {
+    width: 100%;
+}
+
+.heritage-hero {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(to bottom, rgba(10, 10, 10, 0.8), var(--bg-primary)),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" opacity="0.05"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="0.5"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)" /></svg>');
+}
+
+/* Ambient glow behind the hero text */
+.heritage-hero-glow {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    animation: pulse-glow 7s ease-in-out infinite;
+    z-index: 0;
+}
+
+@keyframes pulse-glow {
+
+    0%,
+    100% {
+        opacity: 0.6;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.15);
+    }
+}
+
+.heritage-hero-content {
+    max-width: 800px;
+    position: relative;
+    z-index: 1;
+}
+
+.story-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 6rem 2rem;
+}
+
+.story-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    align-items: center;
+    text-align: center;
+}
+
+.story-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.logo-showcase-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+    width: 100%;
+}
+
+.heritage-brand-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.heritage-logo-text {
+    font-size: 2rem;
+    letter-spacing: 0.3em;
+    font-weight: 700;
+    color: var(--accent-gold);
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+.story-watch-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.story-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--accent-gold);
+    text-align: center;
+}
+
+.story-text p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.values-section {
+    background: var(--bg-secondary);
+    padding: 8rem 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.values-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.mb-4 {
+    margin-bottom: 4rem;
+    font-size: 2.5rem;
+}
+
+.values-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+.value-card {
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.value-icon {
+    color: var(--accent-gold);
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.value-card:hover .value-icon {
+    transform: scale(1.2) rotate(-8deg);
+}
+
+.value-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.value-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+    .story-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .story-image {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+}
